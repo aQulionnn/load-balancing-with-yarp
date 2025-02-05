@@ -1,0 +1,20 @@
+﻿services:
+  europe:
+    image: webapi
+    container_name: europe-api
+    build:
+      context: .
+      dockerfile: webapi/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+
+  asia:
+    image: webapi
+    container_name: asia-api
+    build:
+      context: .
+      dockerfile: webapi/Dockerfile
+    ports:
+      - "6000:6000"
+      - "6001:6001"

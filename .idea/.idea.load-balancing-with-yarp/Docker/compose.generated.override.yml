@@ -1,0 +1,40 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  asia:
+    build:
+      context: "D:\\bekasker\\projects\\test\\load-balancing-with-yarp"
+      dockerfile: "webapi/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/webapi.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "webapi:dev"
+    ports: []
+    volumes:
+    - "D:\\bekasker\\projects\\test\\load-balancing-with-yarp\\webapi:/app:rw"
+    - "D:\\bekasker\\projects\\test\\load-balancing-with-yarp:/src:rw"
+    - "C:\\Users\\bekasker\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  europe:
+    build:
+      context: "D:\\bekasker\\projects\\test\\load-balancing-with-yarp"
+      dockerfile: "webapi/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/webapi.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "webapi:dev"
+    ports: []
+    volumes:
+    - "D:\\bekasker\\projects\\test\\load-balancing-with-yarp\\webapi:/app:rw"
+    - "D:\\bekasker\\projects\\test\\load-balancing-with-yarp:/src:rw"
+    - "C:\\Users\\bekasker\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
