@@ -32,3 +32,7 @@ D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\r
 D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\apigateway.pdb
 D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\apigateway.genruntimeconfig.cache
 D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\ref\apigateway.dll
+D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\apigateway.sourcelink.json
+D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\bin\Debug\net8.0\apigateway.staticwebassets.endpoints.json
+D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\bekasker\projects\test\load-balancing-with-yarp\apigateway\obj\Debug\net8.0\staticwebassets\msbuild.apigateway.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

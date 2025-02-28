@@ -30,3 +30,7 @@ D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\refin
 D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\webapi.pdb
 D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\webapi.genruntimeconfig.cache
 D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\ref\webapi.dll
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\bin\Debug\net8.0\webapi.staticwebassets.endpoints.json
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\webapi.sourcelink.json
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\staticwebassets\msbuild.webapi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
