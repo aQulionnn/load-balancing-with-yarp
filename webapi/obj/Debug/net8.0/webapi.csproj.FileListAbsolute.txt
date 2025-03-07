@@ -34,3 +34,7 @@ D:\bekasker\projects\test\load-balancing-with-yarp\webapi\bin\Debug\net8.0\webap
 D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\webapi.sourcelink.json
 D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\bekasker\projects\test\load-balancing-with-yarp\webapi\obj\Debug\net8.0\staticwebassets\msbuild.webapi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\bin\Debug\net8.0\Asp.Versioning.Http.dll
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+D:\bekasker\projects\test\load-balancing-with-yarp\webapi\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
