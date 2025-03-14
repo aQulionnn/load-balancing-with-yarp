@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using Microsoft.OpenApi.Models;
+using webapi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services.AddApiVersioning(options =>
     {
         options.DefaultApiVersion = new ApiVersion(1, 0);
         options.ApiVersionReader = new UrlSegmentApiVersionReader();
-        options.ReportApiVersions = true;
+        options.ReportApiVersions = false;
     })
     .AddMvc()
     .AddApiExplorer(options =>
@@ -36,6 +37,8 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/swagger/v2/swagger.json", "webapi v2");
     });
 }
+
+app.UseMiddleware<ApiVersionMiddleware>();
 
 app.UseHttpsRedirection();
 
