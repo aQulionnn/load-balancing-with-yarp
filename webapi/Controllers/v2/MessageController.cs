@@ -1,6 +1,8 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.FeatureManagement.Mvc;
+using webapi.Features.FeatureFlags;
 
 namespace webapi.Controllers.v2;
 
@@ -10,7 +12,7 @@ namespace webapi.Controllers.v2;
 public class MessageController : ControllerBase
 {
     [HttpGet]
-    [MapToApiVersion(2)]
+    [FeatureGate(MessageFeatureFlags.EnableGetMessageV2)]
     public IActionResult Get()
     {
         var url = Request.GetDisplayUrl();

@@ -1,5 +1,7 @@
 using Asp.Versioning;
+using Microsoft.FeatureManagement;
 using Microsoft.OpenApi.Models;
+using webapi.Features.Contexts;
 using webapi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,11 @@ builder.Services.AddApiVersioning(options =>
         options.GroupNameFormat = "'v'V";
         options.SubstituteApiVersionInUrl = true;
     });
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddFeatureManagement()
+    .WithTargeting<UserTargetingContext>();
 
 var app = builder.Build();
 
