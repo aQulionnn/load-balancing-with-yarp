@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using Microsoft.Extensions.AI;
 using Microsoft.FeatureManagement;
 using Microsoft.OpenApi.Models;
 using webapi.Features.Contexts;
@@ -32,6 +33,9 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddFeatureManagement()
     .WithTargeting<UserTargetingContext>();
+
+builder.Services.AddSingleton<IChatClient>
+    (new OllamaChatClient(new Uri("http://localhost:11434"), "llava:7b"));
 
 var app = builder.Build();
 
