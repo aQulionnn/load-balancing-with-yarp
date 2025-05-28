@@ -18,3 +18,9 @@
     ports:
       - "6000:6000"
       - "6001:6001"
+        
+  redis:
+    image: redis
+    container_name: cache
+    ports:
+      - "6379:6379"

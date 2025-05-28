@@ -2,8 +2,14 @@ using Asp.Versioning;
 using Microsoft.Extensions.AI;
 using Microsoft.FeatureManagement;
 using Microsoft.OpenApi.Models;
+using RedLockNet;
+using RedLockNet.SERedis;
+using RedLockNet.SERedis.Configuration;
+using StackExchange.Redis;
+using webapi.BackgroundTasks;
 using webapi.Features.Contexts;
 using webapi.Middlewares;
+using webapi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +42,14 @@ builder.Services.AddFeatureManagement()
 
 builder.Services.AddSingleton<IChatClient>
     (new OllamaChatClient(new Uri("http://localhost:11434"), "llava:7b"));
+
+builder.Services.AddSingleton<IDistributedLockFactory>(_ =>
+{
+    var redis = ConnectionMultiplexer.Connect("redis:6379");
+    return RedLockFactory.Create(new List<RedLockMultiplexer>() { redis });
+});
+builder.Services.AddSingleton<LeaderElector>();
+builder.Services.AddHostedService<LoggingLeaderJob>();
 
 var app = builder.Build();
 
