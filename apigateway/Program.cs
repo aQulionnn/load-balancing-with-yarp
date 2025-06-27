@@ -37,7 +37,47 @@ builder.Services.AddRateLimiter(options =>
 builder.Services.AddHealthChecks();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(id => id.FullName!.Replace('+', '-'));
+    
+    options.AddSecurityDefinition("Keycloak", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.OAuth2,
+        Flows = new  OpenApiOAuthFlows
+        {
+            Implicit = new OpenApiOAuthFlow
+            {
+                AuthorizationUrl = new Uri(builder.Configuration["Keycloak:AuthorizationUrl"]!),
+                Scopes = new Dictionary<string, string>
+                {
+                    { "openid", "openid" },
+                    { "profile", "profile" },
+                }
+            }
+        }
+    });
+
+    var securityRequirement = new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Id = "Keycloak",
+                    Type = ReferenceType.SecurityScheme
+                },
+                In = ParameterLocation.Header,
+                Name = "Bearer",
+                Scheme = "Bearer",
+            },
+            []
+        }
+    };
+    
+    options.AddSecurityRequirement(securityRequirement);
+});
 
 var app = builder.Build();
 
