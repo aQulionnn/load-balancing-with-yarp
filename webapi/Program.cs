@@ -7,6 +7,7 @@ using RedLockNet.SERedis;
 using RedLockNet.SERedis.Configuration;
 using StackExchange.Redis;
 using webapi.BackgroundTasks;
+using webapi.Encryption;
 using webapi.Features.Contexts;
 using webapi.Middlewares;
 using webapi.Services;
@@ -50,6 +51,9 @@ builder.Services.AddSingleton<IDistributedLockFactory>(_ =>
 });
 builder.Services.AddSingleton<LeaderElector>();
 builder.Services.AddHostedService<LoggingLeaderJob>();
+
+builder.Services.Configure<SystemSettings>
+    (builder.Configuration.GetSection("SystemSettings"));
 
 var app = builder.Build();
 
