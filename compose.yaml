@@ -8,6 +8,8 @@
     ports:
       - "5000:5000"
       - "5001:5001"
+    environment:
+      - NODE_ID=1
 
   asia:
     image: webapi
@@ -18,6 +20,8 @@
     ports:
       - "6000:6000"
       - "6001:6001"
+    environment:
+      - NODE_ID=2
         
   redis:
     image: redis

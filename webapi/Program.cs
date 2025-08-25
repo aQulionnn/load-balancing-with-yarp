@@ -9,6 +9,7 @@ using StackExchange.Redis;
 using webapi.BackgroundTasks;
 using webapi.Encryption;
 using webapi.Features.Contexts;
+using webapi.LeaderElection.Bully;
 using webapi.Middlewares;
 using webapi.Services;
 
@@ -54,6 +55,11 @@ builder.Services.AddHostedService<LoggingLeaderJob>();
 
 builder.Services.Configure<SystemSettings>
     (builder.Configuration.GetSection("SystemSettings"));
+
+builder.Services.AddSingleton<Node>();
+builder.Services.AddScoped<LeaderElectionService>();
+builder.Services.AddHostedService<HeartbeatJob>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
